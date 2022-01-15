@@ -1,0 +1,50 @@
+mkdir + #name
+cd + name 
+npm init -y
+npm install --save-dev hardhat
+npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+npm install @openzeppelin/contracts
+npx hardhat
+npx hardhat compile
+npx hardhat test
+npx hardhat run scripts/run.js
+npx hardhat node - para ver las cuentas ethereum
+Despues de configurar hardhat.config.js la red de prueba 
+npx hardhat run scripts/deploy.js --network rinkeby
+npm install --save dotenv
+
+CONTRATO ERC721
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol
+https://jsonkeeper.com/ 
+-- metadatos {
+    "name": "Spongebob Cowboy Pants",
+    "description": "A silent hero. A watchful protector.",
+    "image": "https://i.imgur.com/v7U019j.png"
+}
+https://testnets.opensea.io/
+https://rinkeby.rarible.com/token/INSERT_DEPLOY_CONTRACT_ADDRESS_HERE:INSERT_TOKEN_ID_HERE
+
+-- svg
+https://www.svgviewer.dev/
+
+--base64 ONCHAIN
+https://www.base64-image.de/
+https://www.utilities-online.info/base64
+data:image/svg+xml;base64,INSERT_YOUR_BASE64_ENCODED_SVG_HERE
+data:application/json;base64,INSERT_YOUR_BASE64_ENCODED_JSON_HERE
+
+INSTALAR THERSCAN HARDHAT
+Para verificar el contrato y subirlo a etehrscan
+npm i -D @nomiclabs/hardhat-etherscan
+Luego en tu hardhat.config.jsagrega lo siguiente
+require("@nomiclabs/hardhat-etherscan");
+Api de etherscan
+etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env.REACT_APP_API_ETHERSCAN,
+}
+
+Ultimopaso verificar el contrato
+npx hardhat verify 0xf6D3e239A7814f870CEf70838378d460679424A5 --network rinkeby 
+
